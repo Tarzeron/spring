@@ -171,3 +171,5 @@ Spring.VC.VC.opendb
 
 # flatpak
 /.flatpak-builder/
+/cmake-build-debug/
+/.idea/
