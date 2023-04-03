@@ -108,7 +108,6 @@ if(NOT DEFINED ENV{CI})
 	)
 
 	add_spring_test(${test_name} "${test_src}" "${test_libs}" "")
-	add_dependencies(test_UDPListener generateVersionFiles)
 endif ()
 
 ################################################################################
@@ -269,7 +268,6 @@ endif ()
 			test_Log
 		)
 	add_spring_test(${test_name} "${test_src}" "${test_libs}" "")
-	add_dependencies(test_${test_name} generateVersionFiles)
 ################################################################################
 ### LuaSocketRestrictions
 	set(test_name LuaSocketRestrictions)

@@ -49,7 +49,6 @@ macro    (configure_native_skirmish_ai mySourceDirRel_var additionalSources_var 
 		set_target_properties(${myTarget} PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/data)
 		fix_lib_name(${myTarget})
 
-		add_dependencies(${myTarget} generateVersionFiles)
 		target_link_libraries(${myTarget} ${additionalLibraries})
 		target_include_directories(${myTarget} PRIVATE
 			${Spring_SOURCE_DIR}/rts
@@ -123,7 +122,6 @@ if    (BUILD_${myName}_AIINTERFACE)
 	)
 	fix_lib_name(${myTarget})
 
-	add_dependencies(${myTarget} generateVersionFiles)
 	set_target_properties(${myTarget} PROPERTIES OUTPUT_NAME "AIInterface")
 
 	# Install the data files

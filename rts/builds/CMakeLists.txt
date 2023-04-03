@@ -36,9 +36,6 @@ macro    (create_engine_build_and_install_target targetName)
 		COMMENT
 			"  ${myBuildTarget}: Building all dependencies ..." VERBATIM
 		)
-	# This also works for custom targets
-	add_dependencies(${myBuildTarget} ${${targetName}-Deps})
-	add_dependencies(engine-${targetName} generateVersionFiles basecontent)
 
 	# Only install spring-<targetName> executable & dependencies
 	set(${targetName}-InstallDirs
@@ -62,17 +59,10 @@ macro    (create_engine_build_and_install_target targetName)
 		message(STATUS "Using ${targetName} as default engine")
 		add_dependencies(spring spring-${targetName}) # This also works for custom targets
 		add_dependencies(install-spring install-spring-${targetName}) # This also works for custom targets
-		set_target_properties(engine-${targetName} PROPERTIES OUTPUT_NAME "spring")
 	else ()
 		set_target_properties(engine-${targetName} PROPERTIES OUTPUT_NAME "spring-${targetName}")
 	endif ()
-	target_include_directories(engine-${targetName} PRIVATE
-		${gflags_BINARY_DIR}/include
-		${CMAKE_BINARY_DIR}/src-generated/engine
-	)
-	target_link_libraries(engine-${targetName}
-		buildtype_${targetName}
-	)
+
 endmacro ()
 
 

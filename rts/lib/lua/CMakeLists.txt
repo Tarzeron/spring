@@ -56,3 +56,5 @@ else ()
 	set_target_properties(lua PROPERTIES COMPILE_FLAGS "${PIC_FLAG}")
 endif ()
 
+
+include_directories("${CMAKE_SOURCE_DIR}/rts/lib/streflop/")

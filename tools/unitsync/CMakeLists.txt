@@ -95,7 +95,6 @@ endif ()
 #   to be able to link to it
 add_library(unitsync SHARED ${unitsync_files})
 make_target_invisible(unitsync)
-add_dependencies(unitsync generateVersionFiles)
 target_link_libraries(unitsync
 	${unitsync_libs}
 	buildtype_unitsync

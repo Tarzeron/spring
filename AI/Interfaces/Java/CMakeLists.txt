@@ -545,7 +545,7 @@ if    (BUILD_${myName}_AIINTERFACE)
 		${JAVA_INCLUDE_PATH2}
 		${JNI_INCLUDE_DIRS}
 	)
-	add_dependencies(${myNativeTarget} generateVersionFiles)
+
 	target_link_libraries(${myNativeTarget} CUtils streflop)
 	set_target_properties(${myNativeTarget} PROPERTIES COMPILE_FLAGS "-DUSING_STREFLOP")
 	set_target_properties(${myNativeTarget} PROPERTIES OUTPUT_NAME   "AIInterface")

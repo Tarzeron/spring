@@ -273,6 +273,5 @@ if    (BUILD_${myName}_AIWRAPPER)
 		${myGeneratedSourceDir}
 		${Spring_SOURCE_DIR}/rts
 	)
-	add_dependencies(${myTarget} generateVersionFiles)
 	set_target_properties(${myTarget} PROPERTIES OUTPUT_NAME "${myName}")
 endif ()

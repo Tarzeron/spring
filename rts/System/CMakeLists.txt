@@ -209,7 +209,7 @@ add_library(engineMisc STATIC EXCLUDE_FROM_ALL
 	float3.cpp
 	float4.cpp
 	type2.cpp
-)
+        VersionGenerated.h)
 
 target_include_directories(engineMisc
 	PRIVATE

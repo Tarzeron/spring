@@ -34,32 +34,4 @@ if (APPLE)
 	list(APPEND engineLibraries ${COREFOUNDATION_LIBRARY})
 endif ()
 
-
-
-### Build the executable
-add_executable(engine-opengl4 ${EXE_FLAGS} ${engineSources} ${ENGINE_ICON} ${engineHeaders})
-target_link_libraries(engine-opengl4
-	${engineLibraries}
-	${sound-impl}
-	engineSystemNet
-	${engineCommonLibraries}
-	engineaGui
-	${SPRING_SIM_LIBRARIES}
-	engineSim
-	pr-downloader_static
-	engineMisc
-)
-target_include_directories(engine-opengl4 PRIVATE
-	${Spring_SOURCE_DIR}/rts
-	${ENGINE_SRC_ROOT_DIR}/lib/assimp/include
-	${OPENAL_INCLUDE_DIRS}
-	${SDL2_INCLUDE_DIRS}
-	${FREETYPE_INCLUDE_DIRS}
-	${SPRING_MINIZIP_INCLUDE_DIR}
-)
-
-
-### Install the executable
-install(TARGETS engine-opengl4 DESTINATION ${BINDIR})
-
 create_engine_build_and_install_target(opengl4)

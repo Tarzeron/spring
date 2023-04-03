@@ -34,8 +34,4 @@ target_include_directories(luasocket
 		"${CMAKE_SOURCE_DIR}/rts"
 )
 
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/
-	DESTINATION ${DATADIR}
-	FILES_MATCHING PATTERN "*.lua"
-)
 

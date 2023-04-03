@@ -52,4 +52,3 @@ target_link_libraries(demotool
 	${ZLIB_LIBRARY}
 	gflags
 )
-add_dependencies(demotool generateVersionFiles)
